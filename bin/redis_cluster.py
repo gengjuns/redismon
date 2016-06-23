@@ -36,7 +36,8 @@ class RedisClusterInfo(object):
 		cluster_command = "redis-cli -h " + self.addr + " -p " + str(self.port) + " --password " + self.password  + "cluster info"
 		if (self.password == ""):	# If password is empty, replcate the password arg
 			cluster_command = cluster_command.replace("--password"," ")
-		cluster_info = commands.getoutput(cluster_command)	
+		cluster_info = commands.getoutput(cluster_command)
+		self.logger.info(cluster_info)
 		cluster_info_list =  cluster_info.replace("\r\n"," ").replace("\r","").split(" ")
 		
 		cluster_info_dict_all = {}	
