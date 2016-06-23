@@ -96,9 +96,9 @@ class RedisFalconMonitor(object):
 			# 计算的key, 采用COUNTER, 注意cmdstat开头的命令
 			calculate_keys = calculate_metric_dict.keys()
 			if ( info_key in calculate_keys or re.match("^cmdstat",info_key)):
-				key_item_dict = {"endpoint": self.addr, "metric": info_key, "tags": self.tags, "timestamp":upload_ts, "value": redis_info_dict[info_key], "step": 60, "counterType": "COUNTER"}
+				key_item_dict = {"endpoint": "redis-" + self.addr, "metric": info_key, "tags": self.tags, "timestamp":upload_ts, "value": redis_info_dict[info_key], "step": 60, "counterType": "COUNTER"}
 			else:
-                       		key_item_dict = {"endpoint": self.addr, "metric": info_key, "tags": self.tags, "timestamp":upload_ts, "value": redis_info_dict[info_key], "step": 60, "counterType": "GAUGE"}
+                       		key_item_dict = {"endpoint": "redis-" + self.addr, "metric": info_key, "tags": self.tags, "timestamp":upload_ts, "value": redis_info_dict[info_key], "step": 60, "counterType": "GAUGE"}
 		        redis_update_list.append(key_item_dict)
 		r = requests.post(falcon_client,data=json.dumps(redis_update_list))
 
