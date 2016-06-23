@@ -103,12 +103,13 @@ class RedisFalconMonitor(object):
 		r = requests.post(falcon_client,data=json.dumps(redis_update_list))
 
 def main():
-	redis_hostname = socket.gethostname()
+	#redis_hostname = socket.gethostname()
 	f=open("../conf/redismon.conf")
 	y = yaml.load(f)
 	f.close()
 	redis_items = y["items"]
 	for redis_ins in redis_items:
+		redis_hostname = redis_ins["ip"]
 		redis_clusterName = redis_ins["cluster_name"]
 		redis_port = redis_ins["port"]
 		redis_password = redis_ins["password"]
