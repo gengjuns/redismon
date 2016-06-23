@@ -37,15 +37,16 @@ class RedisClusterInfo(object):
 		if (self.password == ""):	# If password is empty, replcate the password arg
 			cluster_command = cluster_command.replace("--password"," ")
 		cluster_info = commands.getoutput(cluster_command)
-		self.logger.info(cluster_info)
+		#self.logger.info(cluster_info)
 		cluster_info_list =  cluster_info.replace("\r\n"," ").replace("\r","").split(" ")
 		
 		cluster_info_dict_all = {}	
 		cluster_info_dict = {}
 		for cluster_info_time in cluster_info_list:
 			item_list = cluster_info_time.split(":")
-			self.logger.info(len(item_list))
-			cluster_info_dict_all[item_list[0]] = item_list[1]
+			#self.logger.info(len(item_list))
+			if (len(item_list) == 2):
+				cluster_info_dict_all[item_list[0]] = item_list[1]
 		# clear the cluster info 
 		if cluster_info_dict_all.has_key("cluster_state"):
 	
