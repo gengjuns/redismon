@@ -77,7 +77,7 @@ class RedisClusterInfo(object):
 
         for cluster_node_time in cluster_node_list:
             item_list = cluster_node_time.split(" ")
-            if (len(item_list) >= 3) and (item_list[2] == "fail" or item_list[2] == "pfail"):
+            if (len(item_list) >= 3) and (item_list[2].find("fail") or item_list[2].find("pfail")):
                 cluster_info_dict["cluster_nodes_status"] = 0
                 break
 
