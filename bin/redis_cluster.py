@@ -82,9 +82,10 @@ class RedisClusterInfo(object):
             self.logger.info(item_list[2].find("fail"))
             self.logger.info(item_list[2].find("pfail"))
 
-            if (len(item_list) >= 3) and (item_list[2].find("fail") != -1 or item_list[2].find("pfail") != -1):
-                self.logger.info("ininin")
-                cluster_info_dict["cluster_nodes_status"] = 0
-                break
+            if (len(item_list) >= 3):
+                if (item_list[2].find("fail") or item_list[2].find("pfail")):
+                    self.logger.info("ininin")
+                    cluster_info_dict["cluster_nodes_status"] = 0
+                    break
 
         return cluster_info_dict
