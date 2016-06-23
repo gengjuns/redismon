@@ -44,6 +44,7 @@ class RedisClusterInfo(object):
 		cluster_info_dict = {}
 		for cluster_info_time in cluster_info_list:
 			item_list = cluster_info_time.split(":")
+			self.logger.info(len(item_list))
 			cluster_info_dict_all[item_list[0]] = item_list[1]
 		# clear the cluster info 
 		if cluster_info_dict_all.has_key("cluster_state"):
