@@ -72,19 +72,13 @@ class RedisClusterInfo(object):
         if (self.password == ""):  # If password is empty, replcate the password arg
             cluster_command_node = cluster_command_node.replace("--password", " ")
         cluster_node = commands.getoutput(cluster_command_node)
-        self.logger.info(cluster_node)
+        #self.logger.info(cluster_node)
         cluster_node_list = cluster_node.split("\n")
 
         for cluster_node_time in cluster_node_list:
             item_list = cluster_node_time.split(" ")
-            self.logger.info(item_list)
-            self.logger.info(len(item_list))
-            self.logger.info(item_list[2].find("fail"))
-            self.logger.info(item_list[2].find("pfail"))
-
             if (len(item_list) >= 3):
                 if (item_list[2].find("fail") != -1 or item_list[2].find("pfail") != -1):
-                    self.logger.info("ininin")
                     cluster_info_dict["cluster_nodes_status"] = 0
                     break
 
