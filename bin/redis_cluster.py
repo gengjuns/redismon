@@ -72,7 +72,7 @@ class RedisClusterInfo(object):
         if (self.password == ""):  # If password is empty, replcate the password arg
             cluster_command_node = cluster_command_node.replace("--password", " ")
         cluster_node = commands.getoutput(cluster_command_node)
-        self.logger.info(cluster_node)
+        #self.logger.info(cluster_node)
         cluster_node_list = cluster_node.replace("\n", " ").replace("\r", "").split(" ")
 
         for cluster_node_time in cluster_node_list:
