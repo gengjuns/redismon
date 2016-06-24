@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f308315c-08a3-4452-9701-c6fa4360a805" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/redis_cluster.py" afterPath="$PROJECT_DIR$/bin/redis_cluster.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/redis_monitor.py" afterPath="$PROJECT_DIR$/bin/redis_monitor.py" />
     </list>
     <ignored path="redismon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="redis_cluster.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="redis_cluster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/redis_cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="79" column="26" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+            <state relative-caret-position="495">
+              <caret line="59" column="44" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="44" />
               <folding>
                 <element signature="e#42#52#0" expanded="true" />
               </folding>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redis_monitor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="redis_monitor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/redis_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+            <state relative-caret-position="420">
+              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -64,8 +64,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/redis_monitor.py" />
         <option value="$PROJECT_DIR$/bin/redis_cluster.py" />
+        <option value="$PROJECT_DIR$/bin/redis_monitor.py" />
       </list>
     </option>
   </component>
@@ -219,21 +219,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/redis_monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/redis_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="79" column="26" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+        <state relative-caret-position="495">
+          <caret line="59" column="44" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="44" />
           <folding>
             <element signature="e#42#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/redis_monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

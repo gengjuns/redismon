@@ -35,7 +35,7 @@ calculate_metric_dict = {
 class RedisFalconMonitor(object):
     """
 
-	"""
+    """
 
     def __init__(self, addr, port, password, cluster_name):
         self.addr = addr
@@ -49,8 +49,11 @@ class RedisFalconMonitor(object):
     def ping_redis(self):
         redis_is_alive = 0
         try:
+            self.logger.info("1")
             redis_cli = redis.StrictRedis(host=self.addr, port=self.port, password=self.password, socket_timeout=0.5)
+            self.logger.info("2")
             ping_res = redis_cli.ping()
+            self.logger.info("2")
             if (ping_res):
                 redis_is_alive = 1
         except redis.exceptions.ConnectionError, ex:
@@ -61,6 +64,7 @@ class RedisFalconMonitor(object):
             self.logger.error(ex)
         except Exception, ex:
             self.logger.error(ex)
+        self.logger.info(redis_is_alive)
         if redis_is_alive == 0:  # If redis is dead, update the alive metrice here.
             redis_alive_data = [
                 {"endpoint": self.addr, "metric": "redis_alive", "tags": self.tags, "timestamp": upload_ts,
